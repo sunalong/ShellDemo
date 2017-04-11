@@ -1,0 +1,4 @@
+#!/bin/bash
+echo the useage of bc in scripts.
+var1=`echo " scale=5; 3.44 / 5" | bc`
+echo The answer is $var1
