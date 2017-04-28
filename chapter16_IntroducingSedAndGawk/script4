@@ -1,0 +1,10 @@
+BEGIN {
+	print "The latest list users and shells"
+	print " Userid	   Shell"
+	print "--------	 ----------"
+	FS=":"
+}
+
+{ print $1 "      " $7 }
+
+END { print "This concludes the listing" }
