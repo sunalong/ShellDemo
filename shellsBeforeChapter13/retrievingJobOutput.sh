@@ -1,5 +1,5 @@
 #!/bin/bash
 # testing the at command
-time=`date +%T`
+time=`date`
 echo "This script ran at $time"
 echo "This is the end of the script" >&2
