@@ -6,21 +6,25 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 echo 改变后的IFS:
 echo "$IFS" | od -t x1
+cd pdf
+rep="（手机版）.pdf"
 dir=$(ls `dirname $0`)
 for file in $dir
 do
-#	echo FN:$file
+	echo FN:$file
 	if [ -d $file ]
 	then
 		echo $file is a direcory!
 	elif [ -f $file ]
 	then 
-		#echo $file is a file.
-		if [[ ${file:0:4} -eq "cn" ]]
-		then
-			echo subName is:${file:11:50}
-			mv $file ${file:11:50}
-		fi
+		echo $file is a file.
+		#if [[ ${file:0:4} -eq "cn" ]]
+		#then
+#			echo subName is:${file:11:50}
+#			mv $file ${file:11:50}
+			#去除末尾的多余字符
+			mv $file ${file/%$rep/.pdf}
+		#fi
 	fi
 done
 #恢复IFS
